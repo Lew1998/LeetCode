@@ -1,14 +1,32 @@
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс {@code Longest_Substring_Without_Repeating_Characters_3} реализует решение задачи №3 на LeetCode —
+ * поиск длины самой длинной подстроки без повторяющихся символов.
+ * <p>
+ * Примеры тестов выводятся в консоль в формате:
+ * <pre>
+ *     вход → ожидание: {ожидаемое значение}, реальность: {полученное значение}
+ * </pre>
+ */
 public class Longest_Substring_Without_Repeating_Characters_3 {
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring("au")); //2
-        System.out.println(lengthOfLongestSubstring("aab"));//2
-        System.out.println(lengthOfLongestSubstring("pwwkew")); //3
-        System.out.println(lengthOfLongestSubstring("dvdf"));//3
+        System.out.println("au       → ожидание: 2, реальность: " + lengthOfLongestSubstring("au"));
+        System.out.println("aab      → ожидание: 2, реальность: " + lengthOfLongestSubstring("aab"));
+        System.out.println("pwwkew   → ожидание: 3, реальность: " + lengthOfLongestSubstring("pwwkew"));
+        System.out.println("dvdf     → ожидание: 3, реальность: " + lengthOfLongestSubstring("dvdf"));
     }
 
+    /**
+     * Возвращает длину самой длинной подстроки без повторяющихся символов.
+     * <p>
+     * Алгоритм использует скользящее окно и хеш-таблицу, чтобы отслеживать последние
+     * позиции каждого символа. При повторении символа окно сдвигается вперёд.
+     *
+     * @param s входная строка
+     * @return длина самой длинной подстроки без повторяющихся символов
+     */
     public static int lengthOfLongestSubstring(String s) {
         if (s.length() == 1) {
             return 1;
