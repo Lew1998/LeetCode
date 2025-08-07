@@ -46,7 +46,7 @@ public class Median_of_Two_Sorted_Arrays_4 {
         int countNums2 = 0;
 
         int mergedArrayLength = nums1.length + nums2.length;
-        int[] mergedArray = new int[mergedArrayLength];
+        int[] mergedArray = new int[mergedArrayLength / 2 + 1];
 
 
         int indexMiddleElement = 0;
