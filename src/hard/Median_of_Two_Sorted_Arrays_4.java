@@ -1,5 +1,7 @@
+package hard;
+
 /**
- * Класс {@code Median_of_Two_Sorted_Arrays_4} реализует решение задачи №4 на LeetCode —
+ * Класс {@code hard.Median_of_Two_Sorted_Arrays_4} реализует решение задачи №4 на LeetCode —
  * нахождение медианы двух отсортированных массивов.
  * <p>
  * Примеры использования представлены в методе {@code main}, где выводится:
@@ -54,7 +56,6 @@ public class Median_of_Two_Sorted_Arrays_4 {
 
         if (mergedArrayLength % 2 != 0) {
             indexMiddleElement = mergedArrayLength / 2;
-            natural = false;
         }
 
         if (mergedArrayLength % 2 == 0) {
