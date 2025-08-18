@@ -2,7 +2,7 @@ package easy;
 
 public class Palindrome_Number_9 {
     public static void main(String[] args) {
-        // Примеры из условия
+//        // Примеры из условия
         runTest(121, true);
         runTest(-121, false);
         runTest(10, false);
@@ -47,9 +47,22 @@ public class Palindrome_Number_9 {
         if (x < 0) {
             return false;
         }
-        String str = String.valueOf(x);
-        StringBuilder stringBuilder = new StringBuilder(str);
-        return stringBuilder.reverse().toString().equals(str);
+        if (x > 0 && x < 10) {
+            return true;
+        }
+
+        String orig = String.valueOf(x);
+
+        byte lastLetterIndex = (byte) (orig.length() - 1);
+        for (byte i = 0; i < orig.length() / 2; i++) {
+            if (orig.charAt(i) != orig.charAt(lastLetterIndex)) {
+                return false;
+            }
+            --lastLetterIndex;
+
+        }
+
+        return true;
     }
 
 
