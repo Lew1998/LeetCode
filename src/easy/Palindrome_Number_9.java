@@ -51,17 +51,37 @@ public class Palindrome_Number_9 {
             return true;
         }
 
-        String orig = String.valueOf(x);
+        char[] chars = String.valueOf(x).toCharArray();
 
-        byte lastLetterIndex = (byte) (orig.length() - 1);
-        for (byte i = 0; i < orig.length() / 2; i++) {
-            if (orig.charAt(i) != orig.charAt(lastLetterIndex)) {
-                return false;
-            }
-            --lastLetterIndex;
+        switch ((byte) chars.length) {
+            case 2:
+                return chars[0] == chars[1];
+
+            case 3:
+                return chars[0] == chars[2];
+
+            case 4:
+                return chars[0] == chars[3] && chars[1] == chars[2];
+
+            case 5:
+                return chars[0] == chars[4] && chars[1] == chars[3];
+
+            case 6:
+                return chars[0] == chars[5] && chars[1] == chars[4] && chars[2] == chars[3];
+
+            case 7:
+                return chars[0] == chars[6] && chars[1] == chars[5] && chars[2] == chars[4];
+
+            case 8:
+                return chars[0] == chars[7] && chars[1] == chars[6] && chars[2] == chars[5] && chars[3] == chars[4];
+
+            case 9:
+                return chars[0] == chars[8] && chars[1] == chars[7] && chars[2] == chars[6] && chars[3] == chars[5];
+
+            case 10:
+                return chars[0] == chars[9] && chars[1] == chars[8] && chars[2] == chars[7] && chars[3] == chars[6] && chars[4] == chars[5];
 
         }
-
         return true;
     }
 
